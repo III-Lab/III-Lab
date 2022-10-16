@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Git设置</title>
+    <link href="/2022/10/14/git%E8%AE%BE%E7%BD%AE/"/>
+    <url>/2022/10/14/git%E8%AE%BE%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="III-Lab-Site"><a href="#III-Lab-Site" class="headerlink" title="III-Lab Site"></a>III-Lab Site</h1><p>组织地址 ：<code>https://github.com/III-Lab</code></p><h2 id="配置SSH连接"><a href="#配置SSH连接" class="headerlink" title="配置SSH连接"></a>配置SSH连接</h2><ol><li><p>配置用户名和邮箱</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.name</span> <span class="hljs-string">&quot;用户名&quot;</span><br>git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.email</span> <span class="hljs-string">&quot;邮箱&quot;</span><br></code></pre></td></tr></table></figure><p>通过以下命令验证是否配置成功</p><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">git config</span> <span class="hljs-literal">--</span><span class="hljs-comment">global</span> <span class="hljs-literal">--</span><span class="hljs-comment">list</span><br></code></pre></td></tr></table></figure></li><li><p>生成<code>ssh-key</code></p><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">ssh-keygen -<span class="hljs-built_in">t</span> rsa -C <span class="hljs-string">&quot;邮箱&quot;</span><br></code></pre></td></tr></table></figure><p>生成过程中会让输入一些信息，直接回车或者Yes</p><p>拷贝<code>key</code>备用</p><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">cat ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.pub<br></code></pre></td></tr></table></figure></li><li><p>打开此<a href="https://github.com/settings/keys">链接</a>，<code>New SSH key</code>，Title随意填，将<code>key</code>拷贝进去，<code>Add SSH Key</code>即可</p></li></ol><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol><li><p>任意克隆一个仓库，例如 <a href="https://github.com/III-Lab/III-Lab.git">III-Lab</a>，需要选择<code>ssh</code>方式</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">git</span>@github.com:III-Lab/III-Lab.git<br></code></pre></td></tr></table></figure><p>如果是已有仓库，可通过以下命令进行修改，将<code>https</code>修改为<code>ssh</code></p><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">git</span> <span class="hljs-string">remote</span> <span class="hljs-built_in">set-url</span> <span class="hljs-string">origin</span> <span class="hljs-string">git</span>@<span class="hljs-string">github</span>.<span class="hljs-string">com</span>:你的仓库.<span class="hljs-string">git</span><br></code></pre></td></tr></table></figure></li><li><p>随意对仓库进行修改，例如增加一个个人文件夹</p><p><img src="/img/image-20221016190000628.png" alt="image-20221016190000628"></p></li><li><p>仓库推送</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">git status <span class="hljs-regexp">//</span> 查看当前仓库状态<br>git add . <span class="hljs-regexp">//</span> 将修改内容添加到暂存区<br>git commit -m <span class="hljs-string">&quot;add folder yunke120&quot;</span> <span class="hljs-regexp">//</span> 将暂存区内容添加到本地仓库<br>git push origin main <span class="hljs-regexp">//</span> 将本地仓库推送到远程<br></code></pre></td></tr></table></figure><p>第一次推送会让你验证设备，按照要求进行设置即可。</p></li></ol><p><img src="/img/image-20221016185941423.png" alt="image-20221016185941423"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
